@@ -7,7 +7,8 @@ ARG DEBIAN_FRONTEND="noninteractive"
 ENV LC_ALL="C.UTF-8" \
     LANG="C.UTF-8"
 
-RUN apt-get -y update && apt-get install -y --no-install-recommends \
+RUN apt-get -y update \
+    && apt-get install -y --no-install-recommends \
         build-essential \
         ca-certificates \
         cdo \
@@ -26,3 +27,8 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
         python3-setuptools \
         python3-tk \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN groupadd -g 999 dockeruser \
+ && useradd -r -u 999 -g dockeruser dockeruser
+
+USER dockeruser

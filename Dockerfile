@@ -29,5 +29,6 @@ RUN apt-get -y update \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN adduser --disabled-password --gecos "" --uid 999 dockeruser
+ENV PATH /home/dockeruser/.local/bin/:$PATH
 
 USER dockeruser

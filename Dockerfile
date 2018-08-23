@@ -28,7 +28,6 @@ RUN apt-get -y update \
         python3-tk \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN groupadd -g 999 dockeruser \
- && useradd -r -u 999 -g dockeruser dockeruser
+RUN adduser --disabled-password --gecos "" --uid 999 dockeruser
 
 USER dockeruser

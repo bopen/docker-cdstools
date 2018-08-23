@@ -17,6 +17,7 @@ RUN apt-get -y update \
         libdb-dev \
         libffi-dev \
         libgeos-dev \
+        libnetcdf-dev \
         libproj-dev \
         libpq-dev \
         libudunits2-0 \

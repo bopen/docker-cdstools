@@ -29,7 +29,7 @@ RUN apt-get -y update \
         python3-tk \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN adduser --disabled-password --gecos "" --uid 999 dockeruser
+RUN adduser --disabled-password --gecos "" --uid 992 dockeruser
 ENV PATH /home/dockeruser/.local/bin/:$PATH
 
 USER dockeruser

@@ -38,5 +38,3 @@ RUN python3 -m pip install -U \
 
 RUN adduser --disabled-password --gecos "" --uid 992 dockeruser
 ENV PATH /home/dockeruser/.local/bin/:$PATH
-
-USER dockeruser

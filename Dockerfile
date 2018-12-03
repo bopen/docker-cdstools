@@ -25,9 +25,16 @@ RUN apt-get -y update \
         pkg-config \
         python3.5-dev \
         python3-pip \
-        python3-setuptools \
         python3-tk \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN python3 -m pip install -U \
+        cython \
+        numpy \
+        pip \
+        pytest-runner \
+        setuptools \
+        wheel
 
 RUN adduser --disabled-password --gecos "" --uid 992 dockeruser
 ENV PATH /home/dockeruser/.local/bin/:$PATH

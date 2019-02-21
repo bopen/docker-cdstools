@@ -1,4 +1,4 @@
-FROM ubuntu:16.04 as deploy
+FROM ubuntu:18.04 as deploy
 
 MAINTAINER Alessandro Amici <a.amici@bopen.eu>
 
@@ -23,7 +23,7 @@ RUN apt-get -y update \
         libudunits2-0 \
         netbase \
         pkg-config \
-        python3.5-dev \
+        python3.6-dev \
         python3-pip \
         python3-tk \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
@@ -35,6 +35,3 @@ RUN python3 -m pip install -U \
         pytest-runner \
         setuptools \
         wheel
-
-RUN adduser --disabled-password --gecos "" --uid 992 dockeruser
-ENV PATH /home/dockeruser/.local/bin/:$PATH
